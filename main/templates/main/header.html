@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static 'main/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'main/css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+<main>
+	<!-- ЛОГО -->
+	<div class="container d-flex flex-wrap justify-content-center">
+		<img src="{% static 'main/img/logo.png' %}" class="col-6" style="max-height: 150px;">
+	</div>
+
+	<!-- МЕНЮ -->
+	<nav class="py-2 brown_back border-bottom">
+		<div class="container d-flex flex-wrap justify-content-center">
+			<ul class="nav nav-pills">
+				<li class="nav-item"><a href="{% url 'home' %}" class="nav-link px-2" style="color: #FADFCC;">Главная</a></li>
+				<li class="nav-item"><a href="{% url 'catalog' %}" class="nav-link px-2" style="color: #FADFCC;">Каталог</a></li>
+				<li class="nav-item"><a href="{% url 'buying' %}" class="nav-link px-2" style="color: #FADFCC;">Как заказать</a></li>
+				<li class="nav-item"><a href="#" class="nav-link px-2" style="color: #FADFCC;">Полезности</a></li>
+			</ul>
+		</div>
+	</nav>
+
+
+
+    {% block body %}
+    {% endblock %}
+
+    <script src="{% static 'main/js/bootstrap.bundle.min.js' %}"></script>
+</main>
+
+</body>
+</html>
