@@ -1,70 +1,6 @@
 {% extends 'main/header.html' %}
 {% block body %}
 	<!-- КАТАЛОГ -->
-	<div class="row featurette">
-		<div class="col-md-5 order-md-1">
-			<a href="img/1.jpg">
-				<img src="img/1.jpg" class="img-fluid">
-			</a>
-		</div>
-		<div class="col-md-7 order-md-2">
-			<h2 class="featurette-heading fw-normal lh-1">Нимфа с завязанными глазами</h2>
-			<h3>500р</h3>
-			<p class="lead">Нимфы в древнегреческой мифологии — это божества природы в виде девушек, олицетворяющих различные живительные и плодоносные силы Земли, природные объекты и явления.<br><br>
-
-По верованиям древних греков нимфы жили в морях, реках, источниках, в гротах, на горах, в рощах и на лугах. Они разделялись на классы в соответствии с тем, какие места населяли.</p>
-		</div>
-	</div>
-	<br>
-	
-	
-	<div class="row featurette">
-		<div class="col-md-5 order-md-1">
-			<a href="img/2.jpg">
-				<img src="img/2.jpg" class="img-fluid">
-			</a>
-		</div>
-		<div class="col-md-7 order-md-2">
-			<h2 class="featurette-heading fw-normal lh-1">Нимфа с завязанными глазами</h2>
-			<h3>500р</h3>
-			<p class="lead">Нимфы в древнегреческой мифологии — это божества природы в виде девушек, олицетворяющих различные живительные и плодоносные силы Земли, природные объекты и явления.<br><br>
-
-По верованиям древних греков нимфы жили в морях, реках, источниках, в гротах, на горах, в рощах и на лугах. Они разделялись на классы в соответствии с тем, какие места населяли.</p>
-		</div>
-	</div>
-	<br>
-	
-	<div class="row featurette">
-		<div class="col-md-5 order-md-1">
-			<a href="img/3.jpg">
-				<img src="img/3.jpg" class="img-fluid">
-			</a>
-		</div>
-		<div class="col-md-7 order-md-2">
-			<h2 class="featurette-heading fw-normal lh-1">Нимфа с завязанными глазами</h2>
-			<h3>500р</h3>
-			<p class="lead">Нимфы в древнегреческой мифологии — это божества природы в виде девушек, олицетворяющих различные живительные и плодоносные силы Земли, природные объекты и явления.<br><br>
-
-По верованиям древних греков нимфы жили в морях, реках, источниках, в гротах, на горах, в рощах и на лугах. Они разделялись на классы в соответствии с тем, какие места населяли.</p>
-		</div>
-	</div>
-	<br>
-	
-	<div class="row featurette">
-		<div class="col-md-5 order-md-1">
-			<a href="img/4.jpg">
-				<img src="img/4.jpg" class="img-fluid">
-			</a>
-		</div>
-		<div class="col-md-7 order-md-2">
-			<h2 class="featurette-heading fw-normal lh-1">Нимфа с завязанными глазами</h2>
-			<h3>500р</h3>
-			<p class="lead">Нимфы в древнегреческой мифологии — это божества природы в виде девушек, олицетворяющих различные живительные и плодоносные силы Земли, природные объекты и явления.<br><br>
-
-По верованиям древних греков нимфы жили в морях, реках, источниках, в гротах, на горах, в рощах и на лугах. Они разделялись на классы в соответствии с тем, какие места населяли.</p>
-		</div>
-	</div>
-	<br>
     {% for candle in candles %}
     <div class="row featurette">
 		<div class="col-md-5 order-md-1">
@@ -74,10 +10,13 @@
 		</div>
 		<div class="col-md-7 order-md-2">
 			<h2 class="featurette-heading fw-normal lh-1">{{ candle.name }}</h2>
-			<h3>500р</h3>
+			<h3>{{ candle.price }} р</h3>
 			<p class="lead">{{ candle.description }}</p>
 		</div>
 	</div>
+        {% for photo in photos %}
+            {{ photo.image.name }} <br>
+        {% endfor %}
 	<br>
     {% endfor %}
 {% endblock %}
